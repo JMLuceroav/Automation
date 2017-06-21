@@ -28,12 +28,14 @@ public class CategoriaWebDriverTest {
 		try {
 			String mensajeEsperado = "Se guardó de manera correcta la Categoría";
 			//TODO Completar
-			//solo debe haber un get como buena practica
+			
+			//Solo debe haber un get como buena practica
 			driver.get("http://localhost:8080/TuBodeguitaWeb/");
-			//Escribiendo la admin
-			driver.findElement(By.id("txtUsuario")).clear();                    //clear te limpia el campo
+			//Escribiendo el usuario: admin
+			driver.findElement(By.id("txtUsuario")).clear();                    
+			//Clear te limpia el campo
 			driver.findElement(By.id("txtUsuario")).sendKeys("admin");
-			//Escribiendo la clave
+			//Escribiendo el password
 			driver.findElement(By.id("txtClave")).clear();
 			driver.findElement(By.id("txtClave")).sendKeys("clave");
 			//Clic en el boton iniciar sesion
@@ -46,9 +48,10 @@ public class CategoriaWebDriverTest {
 			
 			//Recomendacion poner espera cuando te direcciona a una nueva pantalla
 			Thread.sleep(3000);
-			//ahora se da clic en boton nuevo
+			//Ahora se da clic en boton nuevo
 			driver.findElement(By.id("btnNuevo")).click();
-			Thread.sleep(3000);//Tiempo de espera
+			//Tiempo de espera
+			Thread.sleep(3000);
 			
 			//Obteniendo valores
 			driver.findElement(By.id("txtNombre")).clear();
